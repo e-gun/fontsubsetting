@@ -80,16 +80,6 @@ declare -a arr=("Lato-Bold" "Lato-BoldItalic" "Lato-Italic" "Lato-Light" "Lato-L
 
 ./subset-one.sh "${fld}" "${arr[@]}"
 
-# PLEX
-fld="plex"
-declare -a arr=("IBMPlexSans-Bold" "IBMPlexSans-Italic" "IBMPlexSans-Thin"
-"IBMPlexSansCondensed-SemiBold" "IBMPlexSansCondensed-Regular" "IBMPlexSansCondensed-BoldItalic"
-"IBMPlexSans-Regular" "IBMPlexSansCondensed-Italic" "IBMPlexSansCondensed-LightItalic"
-"IBMPlexSans-Light" "IBMPlexSans-SemiBold" "IBMPlexSansCondensed-Regular"
-"IBMPlexSansCondensed-Light" "IBMPlexMono-Light")
-
-./subset-one.sh "${fld}" "${arr[@]}"
-
 # ROBOTOFONT
 fld="roboto"
 declare -a arr=("Roboto-Bold" "Roboto-BoldItalic" "Roboto-Italic"
