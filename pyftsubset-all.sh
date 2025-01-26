@@ -25,6 +25,8 @@
 # things like "Ⓛ"
 # see "mps.fontsubsettingcheck.go" which is only executed if you uncomment a line in "main.go"
 
+# ./subset-one.sh "fira" "${arr[@]}"
+
 # NOTOFONT
 fld="noto"
 declare -a arr=("NotoSansDisplay-Bold" "NotoSansDisplay-Italic" "NotoSansDisplay-Thin"
@@ -33,18 +35,20 @@ declare -a arr=("NotoSansDisplay-Bold" "NotoSansDisplay-Italic" "NotoSansDisplay
 "NotoSansDisplay-ExtraLight" "NotoSansDisplay-SemiBold" "NotoSansDisplay_Condensed-Regular"
 "NotoSansDisplay_SemiCondensed-Regular" "NotoSansMono_Condensed-Regular")
 
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
+./subset-one.sh "${fld}" "${arr[@]}"
+
+# ALEGREYA
+fld="alegreya"
+declare -a arr=("AlegreyaSans-Bold" "AlegreyaSans-BoldItalic" "AlegreyaSans-Italic" "AlegreyaSans-Light" "AlegreyaSans-LightItalic" "AlegreyaSans-Medium"
+"AlegreyaSans-MediumItalic" "AlegreyaSans-Regular")
+
+./subset-one.sh "${fld}" "${arr[@]}"
+
+# BRILLFONT
+fld="brill"
+declare -a arr=("Brill-Bold" "Brill-BoldItalic" "Brill-Italic" "Brill-Roman")
+
+./subset-one.sh "${fld}" "${arr[@]}"
 
 # FIRAFONT
 fld="fira"
@@ -53,38 +57,13 @@ declare -a arr=("FiraMono-Regular" "FiraSans-Bold" "FiraSans-BoldItalic"
 "FiraSans-SemiBold" "FiraSans-Thin" "FiraSansCondensed-Bold"
 "FiraSansCondensed-Italic" "FiraSansCondensed-Regular")
 
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
+./subset-one.sh "${fld}" "${arr[@]}"
 
-# ROBOTOFONT
-fld="roboto"
-declare -a arr=("Roboto-Bold" "Roboto-BoldItalic" "Roboto-Italic"
-"Roboto-Light" "Roboto-Thin" "Roboto-Medium"
-"Roboto-Regular" "RobotoCondensed-Bold"
-"RobotoCondensed-Italic" "RobotoCondensed-Regular" "RobotoMono-Regular")
+# GENTIUMPLUS
+fld="gentium"
+declare -a arr=("GentiumPlus-Bold" "GentiumPlus-BoldItalic" "GentiumPlus-Italic" "GentiumPlus-Regular")
 
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
+./subset-one.sh "${fld}" "${arr[@]}"
 
 # INTERFONT
 fld="inter"
@@ -92,123 +71,14 @@ declare -a arr=("Inter_18pt-Bold" "Inter_18pt-BoldItalic" "Inter_18pt-Italic"
 "Inter_18pt-Light" "Inter_18pt-Thin" "Inter_18pt-Medium" "Inter_18pt-Regular" "InterTight-Bold"
 "InterTight-Italic" "InterTight-Regular")
 
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
-
-# BRILLFONT
-fld="brill"
-declare -a arr=("Brill-Bold" "Brill-BoldItalic" "Brill-Italic" "Brill-Roman")
-
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
-
-# SOURCEFONT
-fld="source"
-declare -a arr=("SourceSans3-VariableFont_wght" "SourceSans3-Italic-VariableFont_wght" "SourceCodePro-VariableFont_wght")
-
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
-
-# GENTIUMPLUS
-fld="gentium"
-declare -a arr=("GentiumPlus-Bold" "GentiumPlus-BoldItalic" "GentiumPlus-Italic" "GentiumPlus-Regular")
-
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
-
-# UBUNTU
-fld="ubuntu"
-declare -a arr=("Ubuntu-Bold" "Ubuntu-BoldItalic" "Ubuntu-Italic" "Ubuntu-Light" "Ubuntu-LightItalic" "Ubuntu-Medium"
-"Ubuntu-MediumItalic" "Ubuntu-Regular" "UbuntuMono-Regular")
-
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
-
-# ALEGREYA
-fld="alegreya"
-declare -a arr=("AlegreyaSans-Bold" "AlegreyaSans-BoldItalic" "AlegreyaSans-Italic" "AlegreyaSans-Light" "AlegreyaSans-LightItalic" "AlegreyaSans-Medium"
-"AlegreyaSans-MediumItalic" "AlegreyaSans-Regular")
-
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
+./subset-one.sh "${fld}" "${arr[@]}"
 
 # LATO
 fld="lato"
 declare -a arr=("Lato-Bold" "Lato-BoldItalic" "Lato-Italic" "Lato-Light" "Lato-LightItalic" "Lato-Medium"
 "Lato-MediumItalic" "Lato-Regular" "Lato-SemiboldItalic" "Lato-Semibold")
 
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
+./subset-one.sh "${fld}" "${arr[@]}"
 
 # PLEX
 fld="plex"
@@ -217,18 +87,31 @@ declare -a arr=("IBMPlexSans-Bold" "IBMPlexSans-Italic" "IBMPlexSans-Thin"
 "IBMPlexSans-Regular" "IBMPlexSansCondensed-Italic" "IBMPlexSansCondensed-LightItalic"
 "IBMPlexSans-Light" "IBMPlexSans-SemiBold" "IBMPlexSansCondensed-Regular"
 "IBMPlexSansCondensed-Light" "IBMPlexMono-Light")
-for i in "${arr[@]}"
-do
-   pyftsubset ./in/${fld}/${i}.ttf \
-   --text-file="inuse.txt" \
-   --output-file=./out/${fld}/${i}Subset.ttf \
-   --layout-features='*' \
-   --glyph-names \
-   --hinting-tables= \
-   --recommended-glyphs \
-   --ignore-missing-unicodes \
-   --ignore-missing-glyphs
-done
+
+./subset-one.sh "${fld}" "${arr[@]}"
+
+# ROBOTOFONT
+fld="roboto"
+declare -a arr=("Roboto-Bold" "Roboto-BoldItalic" "Roboto-Italic"
+"Roboto-Light" "Roboto-Thin" "Roboto-Medium"
+"Roboto-Regular" "RobotoCondensed-Bold"
+"RobotoCondensed-Italic" "RobotoCondensed-Regular" "RobotoMono-Regular")
+
+./subset-one.sh "${fld}" "${arr[@]}"
+
+# SOURCEFONT
+fld="source"
+declare -a arr=("SourceSans3-VariableFont_wght" "SourceSans3-Italic-VariableFont_wght" "SourceCodePro-VariableFont_wght")
+
+./subset-one.sh "${fld}" "${arr[@]}"
+
+# UBUNTU
+fld="ubuntu"
+declare -a arr=("Ubuntu-Bold" "Ubuntu-BoldItalic" "Ubuntu-Italic" "Ubuntu-Light" "Ubuntu-LightItalic" "Ubuntu-Medium"
+"Ubuntu-MediumItalic" "Ubuntu-Regular" "UbuntuMono-Regular")
+
+./subset-one.sh "${fld}" "${arr[@]}"
+
 
 i="iosevka-regular"
 pyftsubset ./in/${i}.woff2 \
@@ -241,8 +124,8 @@ pyftsubset ./in/${i}.woff2 \
    --ignore-missing-unicodes \
    --ignore-missing-glyphs
 
-declare -a arr=("alegreya" "brill" "fira" "gentium" "inter" "lato" "noto" "plex" "roboto" "source" "ubuntu")
-for i in "${arr[@]}"
-do
-  cp ./out/${i}/*ttf ../web/emb/ttf/${i}
-done
+#declare -a arr=("alegreya" "brill" "fira" "gentium" "inter" "lato" "noto" "plex" "roboto" "source" "ubuntu")
+#for i in "${arr[@]}"
+#do
+#  cp ./out/${i}/*ttf ..HipparchiaGoServer/web/emb/ttf/${i}
+#done
