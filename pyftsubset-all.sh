@@ -25,30 +25,49 @@
 # things like "Ⓛ"
 # see "mps.fontsubsettingcheck.go" which is only executed if you uncomment a line in "main.go"
 
-# ./subset-one.sh "fira" "${arr[@]}"
+# ./subset-one-ttf.sh "fira" "${arr[@]}"
 
 # NOTOFONT
+
 fld="noto"
+declare -a arr=("NotoSans-Bold"
+                 "NotoSans-BoldItalic"
+                 "NotoSans-Condensed"
+                 "NotoSans-CondensedItalic"
+                 "NotoSans-CondensedSemiBold"
+                 "NotoSans-ExtraLight"
+                 "NotoSans-Italic"
+                 "NotoSans-Light"
+                 "NotoSans-Regular"
+                 "NotoSans-SemiBold"
+                 "NotoSans-SemiCondensed"
+                 "NotoSans-SemiCondensedItalic"
+                 "NotoSans-Thin"
+                 "NotoSansMono-SemiCondensed")
+
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
+
+fld="notodisplay"
 declare -a arr=("NotoSansDisplay-Bold" "NotoSansDisplay-Italic" "NotoSansDisplay-Thin"
 "NotoSansDisplay_Condensed-SemiBold" "NotoSansMono_Condensed-Regular" "NotoSansDisplay-BoldItalic"
 "NotoSansDisplay-Regular" "NotoSansDisplay_Condensed-Italic" "NotoSansDisplay_SemiCondensed-Italic"
 "NotoSansDisplay-ExtraLight" "NotoSansDisplay-SemiBold" "NotoSansDisplay_Condensed-Regular"
 "NotoSansDisplay_SemiCondensed-Regular" "NotoSansMono_Condensed-Regular")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # ALEGREYA
 fld="alegreya"
 declare -a arr=("AlegreyaSans-Bold" "AlegreyaSans-BoldItalic" "AlegreyaSans-Italic" "AlegreyaSans-Light" "AlegreyaSans-LightItalic" "AlegreyaSans-Medium"
 "AlegreyaSans-MediumItalic" "AlegreyaSans-Regular")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # BRILLFONT
 fld="brill"
 declare -a arr=("Brill-Bold" "Brill-BoldItalic" "Brill-Italic" "Brill-Roman")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # FIRAFONT
 fld="fira"
@@ -57,28 +76,27 @@ declare -a arr=("FiraMono-Regular" "FiraSans-Bold" "FiraSans-BoldItalic"
 "FiraSans-SemiBold" "FiraSans-Thin" "FiraSansCondensed-Bold"
 "FiraSansCondensed-Italic" "FiraSansCondensed-Regular")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # GENTIUMPLUS
 fld="gentium"
 declare -a arr=("GentiumPlus-Bold" "GentiumPlus-BoldItalic" "GentiumPlus-Italic" "GentiumPlus-Regular")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # INTERFONT
-fld="inter"
-declare -a arr=("Inter_18pt-Bold" "Inter_18pt-BoldItalic" "Inter_18pt-Italic"
-"Inter_18pt-Light" "Inter_18pt-Thin" "Inter_18pt-Medium" "Inter_18pt-Regular" "InterTight-Bold"
-"InterTight-Italic" "InterTight-Regular")
+fld="inter-otf"
+declare -a arr=("Inter-Bold" "Inter-BoldItalic" "Inter-Italic" "Inter-Light" "Inter-Thin" "Inter-Medium"
+"Inter-Regular" "Inter-SemiBold")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-otf.sh "${fld}" "${arr[@]}"
 
 # LATO
 fld="lato"
 declare -a arr=("Lato-Bold" "Lato-BoldItalic" "Lato-Italic" "Lato-Light" "Lato-LightItalic" "Lato-Medium"
 "Lato-MediumItalic" "Lato-Regular" "Lato-SemiboldItalic" "Lato-Semibold")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # ROBOTOFONT
 fld="roboto"
@@ -87,20 +105,20 @@ declare -a arr=("Roboto-Bold" "Roboto-BoldItalic" "Roboto-Italic"
 "Roboto-Regular" "RobotoCondensed-Bold"
 "RobotoCondensed-Italic" "RobotoCondensed-Regular" "RobotoMono-Regular")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # SOURCEFONT
 fld="source"
 declare -a arr=("SourceSans3-VariableFont_wght" "SourceSans3-Italic-VariableFont_wght" "SourceCodePro-VariableFont_wght")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # UBUNTU
 fld="ubuntu"
 declare -a arr=("Ubuntu-Bold" "Ubuntu-BoldItalic" "Ubuntu-Italic" "Ubuntu-Light" "Ubuntu-LightItalic" "Ubuntu-Medium"
 "Ubuntu-MediumItalic" "Ubuntu-Regular" "UbuntuMono-Regular")
 
-./subset-one.sh "${fld}" "${arr[@]}"
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 
 i="iosevka-regular"
