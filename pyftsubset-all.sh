@@ -70,17 +70,17 @@ declare -a arr=("Brill-Bold" "Brill-BoldItalic" "Brill-Italic" "Brill-Roman")
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # FIRAFONT
-fld="fira"
+fld="fira-otf"
 declare -a arr=("FiraMono-Regular" "FiraSans-Bold" "FiraSans-BoldItalic"
 "FiraSans-Italic" "FiraSans-Light" "FiraSans-Regular"
 "FiraSans-SemiBold" "FiraSans-Thin" "FiraSansCondensed-Bold"
-"FiraSansCondensed-Italic" "FiraSansCondensed-Regular")
+"FiraSansCondensed-Italic" "FiraSansCondensed-Regular" "FiraMono-Regular")
 
-./subset-one-ttf.sh "${fld}" "${arr[@]}"
+./subset-one-otf.sh "${fld}" "${arr[@]}"
 
 # GENTIUMPLUS
 fld="gentium"
-declare -a arr=("GentiumPlus-Bold" "GentiumPlus-BoldItalic" "GentiumPlus-Italic" "GentiumPlus-Regular")
+declare -a arr=("GentiumPlusCompact-Bold" "GentiumPlusCompact-BoldItalic" "GentiumPlusCompact-Italic" "GentiumPlusCompact-Regular")
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
@@ -102,8 +102,9 @@ declare -a arr=("Lato-Bold" "Lato-BoldItalic" "Lato-Italic" "Lato-Light" "Lato-L
 fld="roboto"
 declare -a arr=("Roboto-Bold" "Roboto-BoldItalic" "Roboto-Italic"
 "Roboto-Light" "Roboto-Thin" "Roboto-Medium"
-"Roboto-Regular" "RobotoCondensed-Bold"
-"RobotoCondensed-Italic" "RobotoCondensed-Regular" "RobotoMono-Regular")
+"Roboto-Regular" "Roboto_Condensed-Bold"
+"Roboto_Condensed-Italic" "Roboto_Condensed-Regular" "RobotoMono-Regular"
+"Roboto-SemiBold" "Roboto_SemiCondensed-Italic" "Roboto_SemiCondensed-Regular")
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
@@ -115,8 +116,11 @@ declare -a arr=("SourceSans3-VariableFont_wght" "SourceSans3-Italic-VariableFont
 
 # UBUNTU
 fld="ubuntu"
-declare -a arr=("Ubuntu-Bold" "Ubuntu-BoldItalic" "Ubuntu-Italic" "Ubuntu-Light" "Ubuntu-LightItalic" "Ubuntu-Medium"
-"Ubuntu-MediumItalic" "Ubuntu-Regular" "UbuntuMono-Regular")
+declare -a arr=("UbuntuSans-Bold" "UbuntuSans-BoldItalic" "UbuntuSans-Italic" "UbuntuSans-Light"
+"UbuntuSans-LightItalic" "UbuntuSans-Medium" "UbuntuSans-MediumItalic" "UbuntuSans-Regular" "UbuntuMono-Regular"
+"UbuntuSans_Condensed-Bold" "UbuntuSans_Condensed-Italic" "UbuntuSans_Condensed-Regular"
+"UbuntuSans_SemiCondensed-Regular" "UbuntuSans_SemiCondensed-Italic"
+)
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
@@ -125,6 +129,17 @@ i="iosevka-regular"
 pyftsubset ./in/${i}.woff2 \
    --text-file="inuse.txt" \
    --output-file=./out/${i}Subset.woff2 \
+   --layout-features='*' \
+   --glyph-names \
+   --hinting-tables= \
+   --recommended-glyphs \
+   --ignore-missing-unicodes \
+   --ignore-missing-glyphs
+
+i="Iosevka-Regular"
+pyftsubset ./in/${i}.ttf \
+   --text-file="inuse.txt" \
+   --output-file=./out/${i}Subset.ttf \
    --layout-features='*' \
    --glyph-names \
    --hinting-tables= \
