@@ -11,7 +11,7 @@
 # Latin-1 Supplement, 0080–00FF
 # Latin Extended-A, 0100–017F
 # Latin Extended-B, 0180–024F
-# Greek Extended Unicode block U+1F00-1FFF
+# Greek Extended Unicode block U+1F00-1F
 
 # find uses via
 #      % glyphhanger ./inuse.txt
@@ -69,6 +69,11 @@ declare -a arr=("Brill-Bold" "Brill-BoldItalic" "Brill-Italic" "Brill-Roman")
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
+# Computer Modern Unicode
+fld="cmu-otf"
+declare -a arr=("cmunss" "cmunssdc" "cmunsi" "cmunso" "cmunsx" "cmunbtl")
+./subset-one-otf.sh "${fld}" "${arr[@]}"
+
 # FIRAFONT
 fld="fira-otf"
 declare -a arr=("FiraMono-Regular" "FiraSans-Bold" "FiraSans-BoldItalic"
@@ -98,6 +103,18 @@ declare -a arr=("Lato-Bold" "Lato-BoldItalic" "Lato-Italic" "Lato-Light" "Lato-L
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
+# MPLUS
+fld="mplus1-otf"
+declare -a arr=("Mplus1-Bold"
+"Mplus1-Light"
+"Mplus1-Medium"
+"Mplus1-Regular"
+"Mplus1-SemiBold"
+"Mplus1-Thin"
+"Mplus1Code-Regula")
+
+./subset-one-otf.sh "${fld}" "${arr[@]}"
+
 # ROBOTOFONT
 fld="roboto"
 declare -a arr=("Roboto-Bold" "Roboto-BoldItalic" "Roboto-Italic"
@@ -110,7 +127,14 @@ declare -a arr=("Roboto-Bold" "Roboto-BoldItalic" "Roboto-Italic"
 
 # SOURCEFONT
 fld="source"
-declare -a arr=("SourceSans3-VariableFont_wght" "SourceSans3-Italic-VariableFont_wght" "SourceCodePro-VariableFont_wght")
+declare -a arr=("SourceSans3-Bold"
+                 "SourceSans3-BoldItalic"
+                 "SourceSans3-ExtraLight"
+                 "SourceSans3-Italic"
+                 "SourceSans3-Light"
+                 "SourceSans3-Regular"
+                 "SourceSans3-Medium"
+                 "SourceCodePro-VariableFont_wght")
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
