@@ -148,7 +148,23 @@ declare -a arr=("UbuntuSans-Bold" "UbuntuSans-BoldItalic" "UbuntuSans-Italic" "U
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
+# FULL IOSEVKA
 
+fld="iosevka"
+declare -a arr=("Iosevka-Bold"
+                "Iosevka-BoldItalic"
+                "Iosevka-ExtraLight"
+                "Iosevka-Italic"
+                "Iosevka-Light"
+                "Iosevka-Medium"
+                "Iosevka-Regular"
+                "Iosevka-SemiBold"
+                "Iosevka-Thin")
+
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
+
+
+# WOFF version...
 i="iosevka-regular"
 pyftsubset ./in/${i}.woff2 \
    --text-file="inuse.txt" \
