@@ -65,13 +65,15 @@ declare -a arr=("AlegreyaSans-Bold" "AlegreyaSans-BoldItalic" "AlegreyaSans-Ital
 
 # BRILLFONT
 fld="brill"
-declare -a arr=("Brill-Bold" "Brill-BoldItalic" "Brill-Italic" "Brill-Roman")
+declare -a arr=("Brill-Bold" "Brill-BoldItalic" "Brill-Italic" "Brill-Roman"
+"Brill-CondensedBold" "Brill-CondensedItalic" "Brill-CondensedRoman")
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # Computer Modern Unicode
 fld="cmu-otf"
-declare -a arr=("cmunss" "cmunssdc" "cmunsi" "cmunso" "cmunsx" "cmunbtl")
+declare -a arr=("cmunss" "cmunssdc" "cmunsi" "cmunso" "cmunsx" "cmunbtl"
+"CMUSansSerif-SemiCondensedOblique" "CMUSansSerifCondensed" "CMUSemiCondensedSansSerif")
 ./subset-one-otf.sh "${fld}" "${arr[@]}"
 
 # FIRAFONT
@@ -79,13 +81,34 @@ fld="fira-otf"
 declare -a arr=("FiraMono-Regular" "FiraSans-Bold" "FiraSans-BoldItalic"
 "FiraSans-Italic" "FiraSans-Light" "FiraSans-Regular"
 "FiraSans-SemiBold" "FiraSans-Thin" "FiraSansCondensed-Bold"
-"FiraSansCondensed-Italic" "FiraSansCondensed-Regular" "FiraMono-Regular")
+"FiraSansCondensed-Italic" "FiraSansCondensed-Regular" "FiraMono-Regular"
+"FiraSans-SemiCondensedItalic" "FiraSans-SemiCondensedRegular")
 
 ./subset-one-otf.sh "${fld}" "${arr[@]}"
 
 # GENTIUMPLUS
-fld="gentium"
+fld="gentiumplus"
 declare -a arr=("GentiumPlusCompact-Bold" "GentiumPlusCompact-BoldItalic" "GentiumPlusCompact-Italic" "GentiumPlusCompact-Regular")
+
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
+
+# GENTIUM
+fld="gentium"
+declare -a arr=("Gentium-Bold" "Gentium-BoldItalic" "Gentium-Italic" "Gentium-Regular" "Gentium-SemiBold"
+"Gentium-SemiBoldItalic" "Gentium-CondensedBold" "Gentium-CondensedItalic" "Gentium-CondensedRegular"
+"Gentium-SemiCondensedBold" "Gentium-SemiCondensedItalic" "Gentium-SemiCondensedRegular")
+
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
+
+# GOTHICA1
+
+fld="gothica1"
+declare -a arr=("GothicA1-Bold"
+                 "GothicA1-ExtraLight"
+                 "GothicA1-Light"
+                 "GothicA1-Regular"
+                 "GothicA1-SemiBold"
+                 "GothicA1-Thin")
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
@@ -111,9 +134,18 @@ declare -a arr=("Mplus1-Bold"
 "Mplus1-Regular"
 "Mplus1-SemiBold"
 "Mplus1-Thin"
-"Mplus1Code-Regula")
+"Mplus1Code-Regular")
 
 ./subset-one-otf.sh "${fld}" "${arr[@]}"
+
+# NEWS CYCLE
+fld="news-cycle"
+declare -a arr=("NewsCycle-Bold"
+"NewsCycle-Regular"
+"NewsCycle-Italic"
+)
+
+./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
 # ROBOTOFONT
 fld="roboto"
@@ -134,7 +166,14 @@ declare -a arr=("SourceSans3-Bold"
                  "SourceSans3-Light"
                  "SourceSans3-Regular"
                  "SourceSans3-Medium"
-                 "SourceCodePro-VariableFont_wght")
+                 "SourceCodePro-VariableFont_wght"
+                 "SourceSans3-CondensedItalic"
+                 "SourceSans3-CondensedRegular"
+                 "SourceSans3-CondensedSemiBold"
+                 "SourceSans3-SemiCondensedItalic"
+                 "SourceSans3-SemiCondensedRegular"
+                 "SourceSans3-SemiCondensedSemiBold"
+                 )
 
 ./subset-one-ttf.sh "${fld}" "${arr[@]}"
 
